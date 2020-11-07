@@ -11,13 +11,18 @@ use Tests\TestCase;
 
 class ShowPostsTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testShowPosts() {
 
-        Post::factory()->count(5)->make();
-        Livewire::test(ShowPosts::class)->render()->assertSee(Post::first()->title);
+        Post::factory()->count(5)->create(['title' => "bar"]);
+        Livewire::test(ShowPosts::class)->assertSee("bar");
+
     }
 
-    public function testPagination() {
-
+    public function testSearch() {
+        Post::factory()->count(5)->create(['title' => "bar"]);
+        Livewire::test(ShowPosts::class)->call('search', 'foo')->assertDontSee("foo");
+        Livewire::test(ShowPosts::class)->call('search', 'bar')->assertSee("bar");
     }
 }
