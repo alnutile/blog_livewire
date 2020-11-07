@@ -13,16 +13,17 @@ class ShowPostsTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testShowPosts() {
+    public function testShowPosts()
+    {
 
         Post::factory()->count(5)->create(['title' => "bar"]);
         Livewire::test(ShowPosts::class)->assertSee("bar");
-
     }
 
-    public function testSearch() {
+    public function testSearch()
+    {
         Post::factory()->count(5)->create(['title' => "bar"]);
-        Livewire::test(ShowPosts::class)->call('search', 'foo')->assertDontSee("foo");
-        Livewire::test(ShowPosts::class)->call('search', 'bar')->assertSee("bar");
+        Livewire::test(ShowPosts::class)->set('search', 'foo')->assertDontSee("foo");
+        Livewire::test(ShowPosts::class)->set('search', 'bar')->assertSee("bar");
     }
 }

@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PostFactory extends Factory
+class TagFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Post::class;
+    protected $model = Tag::class;
 
     /**
      * Define the model's default state.
@@ -22,11 +22,7 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'title' => $this->faker->name,
-            'body' => $this->faker->name,
-            'active' => true,
-            'rendered_body' => $this->faker->name,
+            'name' => $this->faker->name
         ];
     }
 }

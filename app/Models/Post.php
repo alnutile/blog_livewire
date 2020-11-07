@@ -3,9 +3,23 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
-class Post extends Model
+class Post extends BaseModel
 {
+
     use HasFactory;
+
+    // Add your validation rules here
+    public static $rules = [
+        'title' => 'required',
+    ];
+
+    // Don't forget to fill this array
+    protected $fillable = ['title', 'name', 'body', 'rendered_body', 'created_at', 'updated_at', 'active', 'scheduled'];
+
+    public function tags()
+    {
+        return $this->belongsToMany(\App\Models\Tag::class);
+    }
 }

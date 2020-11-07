@@ -19,6 +19,9 @@ class ShowPosts extends Component
     {
         $posts = new Post();
 
-        return view('livewire.show-posts', ['posts' => $posts->where("title", "LIKE", '%' . $this->search . '%')->paginate(20)]);
+        return view(
+            'livewire.show-posts',
+            ['posts' => $posts->where("title", "LIKE", '%' . $this->search . '%')->paginate(20)]
+        );
     }
 }

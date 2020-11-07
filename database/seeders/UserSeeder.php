@@ -1,0 +1,23 @@
+<?php
+
+namespace Database\Seeder;
+
+use Illuminate\Database\Seeder;
+
+class UserSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        factory(\App\Models\User::class)->create(
+            [
+                'email' => env("SEEDED_USER"),
+                'password' => bcrypt(env("SEEDED_PASSWORD")),
+            ]
+        );
+    }
+}
