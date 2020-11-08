@@ -10,12 +10,17 @@
         <p>
           Resume
           <a href="https://goo.gl/z9R72W">doc version</a> and
-          <a href="https://goo.gl/z9R72W">pdf version</a>, past work can be seen below and on
+          <a href="https://www.dropbox.com/s/86i67gt4rhlllcp/Alfred%20Nutile%20-%20Resume.pdf?dl=0">pdf version</a>, past work can be seen below and on
           <a href="/portfolio">portfolio page</a>.
         </p>
         <p>
+          <a href="https://www.packtpub.com/product/laravel-5-x-cookbook/9781786462084" class="badge badge-pill badge-dark">
+            <svg class="bi mr-2" width="24" height="24" fill="currentColor">
+              <use xlink:href="/bootstrap-icons.svg#book-half" />
+            </svg>&nbsp;Author Laravel Recipes Book
+          </a>
           <a href="http://www.developershangout.io/" class="badge badge-pill badge-dark">
-            <svg class="bi" width="24" height="24" fill="currentColor">
+            <svg class="bi mr-2" width="24" height="24" fill="currentColor">
               <use xlink:href="/bootstrap-icons.svg#headphones" />
             </svg>&nbsp;DevelopersHangout Podcast!
           </a>

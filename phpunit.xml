@@ -20,6 +20,7 @@
             <directory suffix=".php">./app/Http/Controllers/Auth</directory>
             <directory suffix=".php">./app/Http/Middleware</directory>
             <file>./app/Providers/BroadcastServiceProvider.php</file>
+            <file>./app/Providers/RouteServiceProvider.php</file>
             <file>./app/Console/Kernel.php</file>
             <file>./app/Models/BaseModel.php</file>
             <file>./app/Http/Kernel.php</file>
