@@ -12,18 +12,13 @@ class ShowProjects extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    protected $listeners = ['searching', 'searchEmpty'];
+    protected $listeners = ['searching'];
 
     public $show = true;
 
     public function searching()
     {
         $this->show = false;
-    }
-
-    public function searchEmpty()
-    {
-        $this->show = true;
     }
 
     public function mount()

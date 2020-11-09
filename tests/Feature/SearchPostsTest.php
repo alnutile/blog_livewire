@@ -17,6 +17,7 @@ class SearchPostsTest extends TestCase
     {
         Post::factory()->count(3)->create();
         Post::factory()->create(['title' => "FooBar"]);
-        Livewire::test(SearchPosts::class)->assertSee("FooBar");
+
+        $this->get("/?search=FooBar")->assertSee("FooBar");
     }
 }
