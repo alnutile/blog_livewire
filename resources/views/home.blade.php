@@ -6,6 +6,9 @@
         @include("misc.banner")
     </div>
     <div class="row">
+        <livewire:search-posts />
+    </div>
+    <div class="row">
         <livewire:show-projects />
     </div>
 </div>

@@ -12,9 +12,32 @@ class ShowProjects extends Component
 
     protected $paginationTheme = 'bootstrap';
 
+    protected $listeners = ['searching', 'searchEmpty'];
+
+    public $show = true;
+
+    public function searching()
+    {
+        $this->show = false;
+    }
+
+    public function searchEmpty()
+    {
+        $this->show = true;
+    }
+
+    public function mount()
+    {
+        $search = request()->get("search");
+        if ($search) {
+            $this->searching();
+        }
+    }
+
     public function render()
     {
         $projects = Project::with('tags')->latest()->paginate(10);
+
         return view(
             'livewire.show-projects',
             compact('projects')

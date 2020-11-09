@@ -3,9 +3,11 @@
 namespace Database\Seeder;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class UserSeeder extends Seeder
 {
+    use WithFaker;
     /**
      * Run the database seeds.
      *
@@ -15,7 +17,7 @@ class UserSeeder extends Seeder
     {
         factory(\App\Models\User::class)->create(
             [
-                'email' => env("SEEDED_USER"),
+                'email' => env("SEEDED_USER", $this->faker->email),
                 'password' => bcrypt(env("SEEDED_PASSWORD")),
             ]
         );

@@ -4,11 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Cache;
+use Laravel\Scout\Searchable;
 
 class Post extends BaseModel
 {
 
     use HasFactory;
+    use Searchable;
+
+    public $asYouType = true;
 
     // Add your validation rules here
     public static $rules = [
