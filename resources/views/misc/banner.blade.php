@@ -1,6 +1,6 @@
-<div class="col-8">
+<div class="col-xs-12 pl-2 pr-2">
   <div class="media">
-    <img src="/storage/me_2020.jpg" style="max-width: 150px;" class="align-self-start mr-3 rounded-circle img-fluid img-thumbnail">
+    <img src="/storage/me_2020.jpg" style="max-width: 150px;" class="align-self-start mr-3 rounded-circle img-fluid img-thumbnail  d-none d-sm-block">
     <div class="media-body">
       <h5 class="mt-0">Alfred Nutile</h5>
       <div class="row-fluid">
@@ -14,7 +14,7 @@
           <a href="/portfolio">portfolio page</a>.
         </p>
         <p>
-          <a href="https://www.packtpub.com/product/laravel-5-x-cookbook/9781786462084" class="badge badge-pill badge-dark">
+          <a href="https://www.packtpub.com/product/laravel-5-x-cookbook/9781786462084" class="mb-2 badge badge-pill badge-dark">
             <svg class="bi mr-2" width="24" height="24" fill="currentColor">
               <use xlink:href="/bootstrap-icons.svg#book-half" />
             </svg>&nbsp;Author Laravel Recipes Book

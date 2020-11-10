@@ -1,5 +1,4 @@
 <div class="ml-4">
-    Show {{ $show }}
     @if($show == true)
     <div class="row row-cols-1 row-cols-md-3 mx-auto">
         @foreach($projects as $project)

@@ -1,5 +1,4 @@
-<div class="testimonies">
-
+<div class="testimonies d-none d-sm-block">
     <blockquote>
         <p>
             “I don’t have inspiration. I only have ideas. Ideas and deadlines.”
