@@ -80,6 +80,9 @@
         </nav>
 
         <main class="py-4">
+            @if(isset($slot))
+            {{ $slot }}
+            @endif
             @yield('content')
         </main>
     </div>

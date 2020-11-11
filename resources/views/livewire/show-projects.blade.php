@@ -1,4 +1,4 @@
-<div class="ml-4">
+<div class="ml-4 mt-4">
     @if($show == true)
     <div class="row row-cols-1 row-cols-md-3 mx-auto">
         @foreach($projects as $project)

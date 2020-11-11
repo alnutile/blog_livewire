@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\PostCreate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,9 @@ Auth::routes([
   'reset' => false,
   'confirm' => false
 ]);
+
+Route::middleware("auth")->group(function () {
+  Route::get("/posts/create", PostCreate::class)->name("posts.create");
+});
 
 Route::get('/', App\Http\Controllers\HomePageController::class)->name('home');
