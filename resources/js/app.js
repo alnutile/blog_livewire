@@ -1,5 +1,6 @@
-require('./bootstrap');
 
+require('./bootstrap');
+import 'bootstrap';
 
   if ($('div.testimonies')) {
     var how_many = $('div.testimonies blockquote').length;

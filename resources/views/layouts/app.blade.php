@@ -13,7 +13,6 @@
     <meta name="keywords" content="leadership, laravel, javascript, vuejs, php" />
     <meta name="author" content="Alfred Nutile" />
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,8 +22,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-
-
     <!-- Livewire -->
     @livewireStyles
 </head>
@@ -46,6 +43,9 @@
         </main>
 
         @livewireScripts
+
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
     </div>
 </body>
 
