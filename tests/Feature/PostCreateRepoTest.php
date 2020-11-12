@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Http\Livewire\PostCreate;
+use App\Models\Post;
 use Facades\App\Repositories\PostCreateRepo;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -13,13 +15,14 @@ class PostCreateRepoTest extends TestCase
 
     public function testPostCreateActive()
     {
-        $payload = [
-            'title' => "foo bar",
-            'body' => "## Foo \n baz",
-            'active' => true
-        ];
+        $payload = new PostCreate();
+        $payload->title = "foo bar";
+        $payload->body = "## Foo \n baz";
+        $payload->active = true;
+
         $results = PostCreateRepo::handle($payload);
 
+        $this->assertInstanceOf(Post::class, $results);
         $this->assertEquals("foo bar", $results->title);
         $this->assertEquals("## Foo \n baz", $results->body);
         $this->assertEquals(1, $results->active);
