@@ -19,6 +19,10 @@ class Post extends BaseModel
         'title' => 'required',
     ];
 
+    protected $casts = [
+        'scheduled' => 'datetime',
+    ];
+
     // Don't forget to fill this array
     protected $fillable = ['title', 'name', 'body', 'rendered_body', 'created_at', 'updated_at', 'active', 'scheduled'];
 

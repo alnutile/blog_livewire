@@ -42,8 +42,16 @@ class PostCreateRepoTest extends TestCase
         $this->assertEquals("<h2>Foo</h2>\n<p>baz</p>\n", $results->rendered_body);
     }
 
-    public function testPostCreateNotActive()
+    public function testPostCreateTags()
     {
+        $payload = new PostCreate();
+        $payload->title = "foo bar";
+        $payload->tags = "foo,bar";
+        $payload->scheduled = Carbon::now();
+        $payload->body = "## Foo \n baz";
+        $payload->active = true;
+        $results = PostCreateRepo::handle($payload);
+        $this->assertCount(2, $results->refresh()->tags);
     }
 
     public function testPostCreateScheduled()
@@ -53,9 +61,7 @@ class PostCreateRepoTest extends TestCase
         $payload->scheduled = Carbon::now();
         $payload->body = "## Foo \n baz";
         $payload->active = true;
-
         $results = PostCreateRepo::handle($payload);
-
         $this->assertNotNull($results->scheduled);
         $this->assertInstanceOf(Carbon::class, $results->scheduled);
     }
