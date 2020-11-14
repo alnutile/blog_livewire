@@ -13,7 +13,7 @@ class PostCreate extends Component
     public $title;
     public $body;
     public $active = 1;
-    public $schedule = null;
+    public $scheduled = null;
     public $tags;
 
     protected $rules = [

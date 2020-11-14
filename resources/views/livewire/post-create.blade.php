@@ -20,10 +20,9 @@
             </div>
             <div class="form-group">
                 <label for="schedule">Schedule</label>
-                <input type="text" class="form-control" id="schedule" aria-describedby="schedule" wire:model="schedule" placeholder="2020-10-15 09:30:00">
-                <small id="schedulehelp" class="form-text text-muted">Only works if not active, then it will be made active on the date.
+                <input type="text" class="form-control" id="scheduled" aria-describedby="scheduled" wire:model="scheduled" placeholder="2020-10-15 09:30:00">
+                <small id="scheduledhelp" class="form-text text-muted">Only works if not active, then it will be made active on the date.
                     <a href="https://carbon.nesbot.com/docs/#api-setters" target="_blank">Uses Carbon parse</a>
-
                 </small>
             </div>
             <button class="btn btn-primary">Submit</button>
