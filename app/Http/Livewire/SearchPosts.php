@@ -9,9 +9,18 @@ use Livewire\Component;
 class SearchPosts extends Component
 {
 
-    public $search;
+    public $search = '';
+    public $page = 1;
 
-    protected $queryString = ['search'];
+    protected $queryString = [
+        'search' => ['except' => ''],
+        'page' => ['except' => 1],
+    ];
+
+    public function mount()
+    {
+        $this->fill(request()->only('search', 'page'));
+    }
 
     public function render()
     {

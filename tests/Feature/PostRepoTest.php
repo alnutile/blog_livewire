@@ -5,12 +5,12 @@ namespace Tests\Feature;
 use App\Http\Livewire\PostCreate;
 use App\Models\Post;
 use Carbon\Carbon;
-use Facades\App\Repositories\PostCreateRepo;
+use Facades\App\Repositories\PostRepo;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class PostCreateRepoTest extends TestCase
+class PostRepoTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -21,7 +21,7 @@ class PostCreateRepoTest extends TestCase
         $payload->body = "## Foo \n baz";
         $payload->active = true;
 
-        $results = PostCreateRepo::handle($payload);
+        $results = PostRepo::handle($payload);
 
         $this->assertInstanceOf(Post::class, $results);
         $this->assertEquals("foo bar", $results->title);
@@ -37,7 +37,7 @@ class PostCreateRepoTest extends TestCase
         $payload->body = "## Foo \n baz";
         $payload->active = true;
 
-        $results = PostCreateRepo::handle($payload);
+        $results = PostRepo::handle($payload);
 
         $this->assertEquals("<h2>Foo</h2>\n<p>baz</p>\n", $results->rendered_body);
     }
@@ -50,7 +50,7 @@ class PostCreateRepoTest extends TestCase
         $payload->scheduled = Carbon::now();
         $payload->body = "## Foo \n baz";
         $payload->active = true;
-        $results = PostCreateRepo::handle($payload);
+        $results = PostRepo::handle($payload);
         $this->assertCount(2, $results->refresh()->tags);
     }
 
@@ -61,7 +61,7 @@ class PostCreateRepoTest extends TestCase
         $payload->scheduled = Carbon::now();
         $payload->body = "## Foo \n baz";
         $payload->active = true;
-        $results = PostCreateRepo::handle($payload);
+        $results = PostRepo::handle($payload);
         $this->assertNotNull($results->scheduled);
         $this->assertInstanceOf(Carbon::class, $results->scheduled);
     }

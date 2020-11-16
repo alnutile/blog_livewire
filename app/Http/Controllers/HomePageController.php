@@ -16,6 +16,6 @@ class HomePageController extends Controller
     {
         $url = sprintf("<a href=\"/posts/%s\">here</a>", 1);
         session()->flash("message", sprintf("Post Created %s %s", "foo", $url));
-        return view('home')->with("message", "Foo");
+        return view('home');
     }
 }
