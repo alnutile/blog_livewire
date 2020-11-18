@@ -33,6 +33,7 @@
               </a>
 
               <a class="dropdown-item" href="{{ route('posts.create') }}">Create Post</a>
+              <a class="dropdown-item" href="{{ route('projects.create') }}">Create Project</a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf

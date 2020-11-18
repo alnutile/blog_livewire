@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\PostCreate;
 use App\Http\Livewire\PostEdit;
+use App\Http\Livewire\ProjectCreate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,7 @@ Auth::routes([
 Route::middleware("auth")->group(function () {
   Route::get("/posts/create", PostCreate::class)->name("posts.create");
   Route::get("/posts/{post}/edit", PostEdit::class)->name("posts.edit");
+  Route::get("/projects/create", ProjectCreate::class)->name("projects.create");
 });
 
 Route::get('/', App\Http\Controllers\HomePageController::class)->name('home');

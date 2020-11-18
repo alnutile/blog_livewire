@@ -10,7 +10,6 @@ use Livewire\Component;
 class PostCreate extends PostBase
 {
 
-
     public $message = "Post Created";
 
     public function render()
