@@ -7,8 +7,6 @@ use App\Models\Post;
 class PostEdit extends PostBase
 {
 
-    public $post;
-
     public $message = "Post Updated";
 
     public function mount(Post $post)
@@ -17,6 +15,7 @@ class PostEdit extends PostBase
         $this->title = $post->title;
         $this->body = $post->body;
         $this->active = $post->active;
+        $this->tags = collect($post->tags->toArray())->implode("name", ",");
         $this->scheduled = $post->scheduled;
     }
 

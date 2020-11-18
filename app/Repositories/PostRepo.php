@@ -15,8 +15,9 @@ class PostRepo
 
     public function handle(PostBase $payload)
     {
-        $post = Post::firstOrCreate(
-            ['id' => $payload->id],
+        /** $id is reserved so I had trouble checking for that */
+        $post = Post::updateOrCreate(
+            ['id' => optional($payload->post)->id],
             [
                 'active' => $payload->active,
                 'title' => $payload->title,
