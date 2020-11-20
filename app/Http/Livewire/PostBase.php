@@ -10,9 +10,9 @@ use Livewire\Component;
 class PostBase extends Component
 {
 
-  /**
-   * @var Post $post
-   */
+    /**
+     * @var Post $post
+     */
     public $post = null;
     public $title = "";
     public $body = "";
@@ -21,8 +21,8 @@ class PostBase extends Component
     public $tags = "";
 
     protected $rules = [
-    'title' => 'required',
-    'body' => 'required',
+        'title' => 'required',
+        'body' => 'required',
     ];
 
     public function save()

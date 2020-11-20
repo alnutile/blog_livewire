@@ -25,7 +25,10 @@ class ProjectBase extends Component
 
     public function save()
     {
-        $this->validate();
+        $this->validate([
+            'photo_file_name' => 'image',
+        ]);
+
 
         $post = ProjectRepo::handle($this);
 

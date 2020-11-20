@@ -14,7 +14,12 @@
                 <label for="body">Body</label>
                 <textarea class="form-control" wire:model="body" id="body" rows="100"></textarea>
             </div>
-            <button class="btn btn-primary">Submit</button>
+            <input type="file" class="form-control-file" wire:model="photo_file_name">
+            @error('photo_file_name') <span class="error">{{ $message }}</span> @enderror
+            @if ($photo_file_name)
+            <img class="img-fluid" src="{{ $photo_file_name->temporaryUrl() }}">
+            @endif
+            <div class="form-group"><button class="btn btn-primary mt-2">Submit</button></div>
         </form>
     </div>
 </div>

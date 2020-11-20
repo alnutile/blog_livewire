@@ -14,11 +14,14 @@ class ProjectRepo
 
     public function handle(ProjectBase $payload)
     {
+        $name = $payload->photo_file_name->getClientOriginalName();
+        $results = $payload->photo_file_name->storeAs('/', $name, 'public');
         /** $id is reserved so I had trouble checking for that */
         $model = Project::updateOrCreate(
             ['id' => optional($payload->post)->id],
             [
                 'title' => $payload->title,
+                'photo_file_name' => $name,
                 'body' => $payload->body,
                 'rendered_body' => $this->transform($payload->body)
             ]
